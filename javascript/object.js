@@ -4,31 +4,61 @@
 function getInfo()
 {
     //taking an input from the user
-    var name=document.getElementById("name").value;
-    var height=document.getElementById("height").value;
+    var n=document.getElementById("name").value;
+    var h=document.getElementById("height").value;
+    //creating an object using object constructor 
+    var createObject = {
+        //we can't use this to initialize object properties,but this can be used to call methods.
+        name:n,
+        height:h,
+        aboutYourSelf: function() {
+        return"I am "+this.name+".I am "+this.height+" cm height";
+         }
+        };
     // construstor function is called using new keyword.
-    var me = new createObject(name, height);
-    me.aboutYourSelf();
+    //var me = new createObject(name, height);
+    var me=createObject;
+    document.getElementById("display").innerText=me.aboutYourSelf();
+    //displaying the type of constructor in html page
+    document.getElementById("constructor").innerText=createObject.constructor;
+
+
 }
+
+//Code for output on console after taking input from the user
+//taking an input from the user
+/*var n=window.prompt("enter uour name");
+var h=window.prompt("enter ur height");
+//creating an object using object constructor 
+var createObject = {
+    name:n,
+    height:h,
+    aboutYourSelf: function() {
+    return"I am "+this.name+".I am "+this.height+" cm height";
+     }
+    };
+     var me=createObject;
+     console.log(me.aboutYourSelf());*/
+
 //Constructing an Object with a Constructor Function
-function createObject(n,h) 
+/*function createObject(n,h) 
 {
-    /*Within the constructor function, the object that is being created is refered as this.When function
-     is called using new, inside that function, a new, empty object is created and the this keyword is 
-    set to that object.Then this is used to set the values of the properties in that object.*/
+    //Within the constructor function, the object that is being created is refered as this.When function
+     //is called using new, inside that function, a new, empty object is created and the this keyword is 
+    //set to that object.Then this is used to set the values of the properties in that object.
         this.myName = n;
         this.myHeight =h;
-    /*Functions are called methods when they are inside an object.Here aboutYourSelf is a method*/
+    //Functions are called methods when they are inside an object.Here aboutYourSelf is a method
         this.aboutYourSelf = function() {
-    /*At the end of the function, nothing has to explicitly return the object which is created. It is
-    automatically done by JS because the function is called using new keyword. The object that is returned is
-    this:*/
+    //At the end of the function, nothing has to explicitly return the object which is created. It is
+    //automatically done by JS because the function is called using new keyword. The object that is returned is
+    //this:
        
         document.getElementById("display").innerText= "I am "+this.myName+".I am "+this.myHeight+" cm height";
     
     };
-}
-    
+}*/
+   
    /*--------------------------------------------------------------------------------------------------*/
     //Code for output on console after taking input from the user
     //Constructing an Object with a Constructor Function
