@@ -11,6 +11,7 @@ function getInfo()
         //we can't use this to initialize object properties,but this can be used to call methods.
         name:n,
         height:h,
+        //method in a object constructor
         aboutYourSelf: function() {
         return"I am "+this.name+".I am "+this.height+" cm height";
          }
@@ -18,6 +19,7 @@ function getInfo()
     // construstor function is called using new keyword.
     //var me = new createObject(name, height);
     var me=createObject;
+    // displaying the out put o the page
     document.getElementById("display").innerText=me.aboutYourSelf();
     //displaying the type of constructor in html page
     document.getElementById("constructor").innerText=createObject.constructor;
